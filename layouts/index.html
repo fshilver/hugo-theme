@@ -1,4 +1,9 @@
 {{ define "main" }}
+
+{{ if .Site.IsServer }}
+{{ `<!-- layout/index.html -->` | safeHTML }}
+{{ end }}
+
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
 
 <div class="container">
@@ -17,7 +22,7 @@
                                             Published at {{ .Date.Format "January 2, 2006" }} &middot;
                                             <i class="far fa-clock"></i>&nbsp;{{.ReadingTime}} min read
                                         </p>
-                                        <p>{{ .Summary }}...</p>
+                                        <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}...{{ end }}</p>
                                     </div>
                                 </div>
                             </article>
