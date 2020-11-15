@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{ if .Site.IsServer }}
+{{ `<!-- layout/_default/single.html -->` | safeHTML }}
+{{ end }}
+<div class="container">
+    <section class="section">
+        <div class="columns">
+            <div class="column is-9">
+                <article class="box">
+                    <h1 class="title is-1">{{ .Title }}</h1>
+                    <div class="title subtitle heading is-6">
+                        <div class="columns is-vcentered">
+                            <div class="column">
+                                <div class="columns is-vcentered is-mobile">
+    
+                                    {{ with .Site.Params.avatar }}
+                                    <div class="column is-narrow">
+                                        <img src="{{ . }}" alt="avatar" class="author-image">
+                                    </div>
+                                    {{ end }}
+                                    <div class="column">
+                                        <p>{{ .Site.Params.author }}</p>
+                                        <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> | {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column">
+                                {{ range $idx, $category := .Params.categories }}
+                                {{- if ne $idx 0 }}, {{ end }}<a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                                {{- end }}
+                            </div>
+                        </div>
+    
+                    </div>
+                    {{ with .Params.images }}
+                    <figure class="cover">
+                        <img src="{{ index . 0 }}" alt="cover">
+                    </figure>
+                    {{ end }}
+    
+                    <div class="content">
+                        {{ .Content }}
+                    </div>
+                    <section class="section">
+                        <div class="columns is-mobile">
+                            <div class="column has-text-left">
+                                {{ with .PrevInSection }}
+                                <p>Previous post</p>
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                {{ end }}
+                            </div>
+                            <div class="column has-text-right">
+                                {{ with .NextInSection }}
+                                <p>Next post</p>
+                                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </section>
+                </article>
+
+            </div>
+            <div class="column is-3">
+                {{ partial "widget-tags.html" . }}<br>
+                {{ partial "widget-recent.html" . }}<br>
+                {{ partial "widget-related.html" . }}<br>
+                {{ partial "widget-archives.html" . }}
+            </div>
+        </div>
+    </section>
+</div>
+
+{{ end }}
