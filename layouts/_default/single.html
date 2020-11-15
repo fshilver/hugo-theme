@@ -1,7 +1,9 @@
 {{ define "main" }}
+
 {{ if .Site.IsServer }}
 {{ `<!-- layout/_default/single.html -->` | safeHTML }}
 {{ end }}
+
 <div class="container">
     <section class="section">
         <div class="columns">
