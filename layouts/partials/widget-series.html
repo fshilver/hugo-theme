@@ -1,0 +1,22 @@
+{{- /* If it is part of a series, link to related articles */}}
+{{- $permalink := .Permalink }}
+{{- $siteSeries := .Site.Taxonomies.series }}
+{{ with .Params.series }}
+    <div class="card mb-3">
+        <div class="card-content">
+            <h1 class="title is-5">Series</h1>
+            <div class="series">
+                {{- range $name := . }}
+                    {{- $series := index $siteSeries $name }}
+                    {{- range $page := $series.Pages.ByDate }}
+                        {{- if ne $page.Permalink $permalink }}
+                            <h1><a href="{{ .Permalink | absURL }}">{{ .Title }}</a></h1>
+                        {{ else }}
+                            <h1>{{ .Title }}</a></h1>
+                        {{ end }}
+                    {{- end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+{{ end }}

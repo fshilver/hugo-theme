@@ -3,7 +3,7 @@
 {{ end }}
 
 {{ if $.Scratch.Get "has_related" }}
-<div class="card">
+<div class="card mb-3">
     <div class="card-content">
         <h1 class="title is-5">Related posts</h1>
       {{ $num_to_show := .Site.Params.related_content_limit | default 7 }}
@@ -14,4 +14,3 @@
     </div>
 </div>
 {{ end }}
-    
