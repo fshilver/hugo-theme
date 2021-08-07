@@ -47,3 +47,29 @@ a {
 .footer-text:hover {
     color: gray;
 }
+
+.content {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    letter-spacing: -0.004em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.content h2 {
+    margin-top: 3rem;
+}
+
+.card,
+.box {
+    background-color: #f0f2f4;
+}
+
+.box:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+    cursor: pointer;
+    border: 2px solid gray;
+}
