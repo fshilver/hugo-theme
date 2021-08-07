@@ -65,6 +65,7 @@ a {
     background-color: #f0f2f4;
 }
 
+a.box:hover,
 .box:hover {
     cursor: pointer;
     box-shadow: 0 0 0 2px gray inset;

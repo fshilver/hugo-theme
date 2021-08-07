@@ -12,10 +12,11 @@
             <div class="column is-9">
                     <div class="content">
                         {{ range $paginator.Pages }}
-                            <article class="media box">
+                        <a href="{{ .RelPermalink }}" class="box">
+                            <article class="media">
                                 <div class="media-content">
                                     <div class="content">
-                                        <p class="title is-4"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></p>
+                                        <p class="title is-4">{{ .LinkTitle }}</p>
                                         <p class="subtitle is-size-6 has-text-grey-light">
                                             Published at {{ .Date.Format "January 2, 2006" }} &middot;
                                             <i class="far fa-clock"></i>&nbsp;{{.ReadingTime}} min read
@@ -24,6 +25,7 @@
                                     </div>
                                 </div>
                             </article>
+                        </a>
                         {{ end }}
                     </div>
             </div>
