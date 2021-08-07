@@ -69,3 +69,9 @@ a {
     cursor: pointer;
     box-shadow: 0 0 0 2px gray inset;
 }
+
+code {
+    background-color: white;
+    color: gray;
+    font-family: 'Courier New', Courier, monospace;
+}
