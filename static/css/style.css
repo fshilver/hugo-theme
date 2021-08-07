@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background: #F0F2F4;
+    font-family: -apple-system, 'Noto Sans KR', 'Nanum Gothic', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 main {
