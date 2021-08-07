@@ -8,26 +8,25 @@
     <section class="section">
         <div class="columns">
             <div class="column is-9">
-                <div class="tile is-child box">
-                    <div class="content">
-                        <h2>{{ .Title }} / {{ .Data.Singular }}</h2>
-                        <hr>
-                        {{ range .Pages }}
-                            <article class="media">
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p class="title is-4"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></p>
-                                        <p class="subtitle is-size-6 has-text-grey-light">
-                                            Published at {{ .Date.Format "January 2, 2006" }} &middot;
-                                            <i class="far fa-clock"></i>&nbsp;{{.ReadingTime}} min read
-                                        </p>
-                                        <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}...{{ end }}</p>
-                                    </div>
+                <h2>{{ .Data.Singular }}</h2>
+                <div class="content">
+                    <h2>{{ .Title }}</h2>
+                    <hr>
+                    {{ range .Pages }}
+                        <article class="media box">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p class="title is-4"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></p>
+                                    <p class="subtitle is-size-6 has-text-grey-light">
+                                        Published at {{ .Date.Format "January 2, 2006" }} &middot;
+                                        <i class="far fa-clock"></i>&nbsp;{{.ReadingTime}} min read
+                                    </p>
+                                    <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}...{{ end }}</p>
                                 </div>
-                            </article>
-                            <br>
-                        {{ end }}
-                    </div>
+                            </div>
+                        </article>
+                        <br>
+                    {{ end }}
                 </div>
             </div>
             <div class="column is-3">

@@ -8,20 +8,22 @@
     <section class="section">
         <div class="columns">
             <div class="column is-9">
-                <div class="tile is-child box">
-                    <div class="content">
-                        <h2>{{ .Title }}</h2>
-                        <hr>
-                        {{ range .Pages }}
-                            <article class="media">
-                                <div class="media-content">
-                                    <div class="content">
-                                        <p class="title is-4"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></p>
-                                    </div>
+                <div class="content">
+                    <h2>{{ .Title }}</h2>
+                    <hr>
+                    <div class="tags are-large">
+                    {{ range .Pages }}
+                        <a class="tag is-dark" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+
+                        <!-- <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p class="title is-4"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></p>
                                 </div>
-                            </article>
-                            <br>
-                        {{ end }}
+                            </div>
+                        </article>
+                        <br> -->
+                    {{ end }}
                     </div>
                 </div>
             </div>
