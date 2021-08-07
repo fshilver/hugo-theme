@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "head" . -}}
-    <body>
+    <body class="has-navbar-fixed-top">
         {{- partial "header" . -}}
         <main>
             {{- block "main" . }}{{- end }}
