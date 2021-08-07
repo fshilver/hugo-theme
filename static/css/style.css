@@ -66,10 +66,6 @@ a {
 }
 
 .box:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
-    transition-duration: 0.5s;
     cursor: pointer;
-    border: 2px solid gray;
+    box-shadow: 0 0 0 2px gray inset;
 }
