@@ -1,0 +1,18 @@
+recent_post:
+  one: Recent Post
+  other: Recent Posts
+
+tag:
+  one: Tag
+  other: Tags
+
+series:
+  other: Series
+
+related_post:
+  one: Related Post
+  other: Related Posts
+
+archive:
+  one: Archive
+  other: Archives

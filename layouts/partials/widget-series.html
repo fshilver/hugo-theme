@@ -4,7 +4,7 @@
 {{ with .Params.series }}
     <div class="card mb-3">
         <div class="card-content">
-            <h1 class="title is-5">Series</h1>
+            <h1 class="title is-5">{{ i18n "series" }}</h1>
             <div class="series">
                 {{- range $name := . }}
                     {{- $series := index $siteSeries $name }}
