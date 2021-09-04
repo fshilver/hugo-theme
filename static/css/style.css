@@ -17,6 +17,11 @@ main {
 
 a {
     color: rgb(52, 58, 64);
+    text-decoration: underline;
+}
+
+.card-content a {
+    text-decoration: none;
 }
 
 .max-800px {
