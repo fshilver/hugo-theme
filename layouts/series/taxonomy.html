@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+{{ if .Site.IsServer }}
+{{ `<!-- layout/series/list.html -->` | safeHTML }}
+{{ end }}
+
+<div class="container">
+    <section class="section">
+        <div class="columns">
+            <div class="column is-9">
+                <div class="content">
+                    <h2>{{ .Title }}</h2>
+                    <p>{{ .Content }}</p>
+                    <hr>
+
+                    <div class="columns is-multiline">
+                        {{ range .Pages.Reverse }}
+                        <div class="column is-4">
+                            <a class="card" href="{{ .RelPermalink }}">
+                                {{ if .Params.Banner }}
+                                <div class="card-image">
+                                    <figure class="image is-5by3">
+                                        <img src="{{ path.Join .RelPermalink "banner.png" }}" alt="banner image">
+                                    </figure>
+                                </div>
+                                {{ end }}
+                                <div class="card-content">
+                                    {{ .LinkTitle }}
+                                </div>
+                            </a>
+                        </div>
+                        {{ end }}
+                    </div>
+
+                </div>
+            </div>
+            <div class="column is-3">
+                {{ partial "widget-tags.html" . }}<br>
+                {{ partial "widget-recent.html" . }}<br>
+            </div>
+        </div>
+    </section>
+</div>
+
+{{ end }}
+
+

@@ -8,9 +8,8 @@
     <section class="section">
         <div class="columns">
             <div class="column is-9">
-                <h2>{{ .Data.Singular }}</h2>
+                <h2>{{ .Data.Singular }} - {{ .Title }}</h2>
                 <div class="content">
-                    <h2>{{ .Title }}</h2>
                     <hr>
                     {{ range .Pages }}
                     <a href="{{ .RelPermalink }}" class="box">
