@@ -2,7 +2,7 @@
     <nav class="navbar is-fixed-top has-shadow" role="navigation">
 
             <div class="navbar-brand">
-                <a href="{{ .Site.Home.URL }}" title="home" class="navbar-item">
+                <a href="{{ .Site.Home.RelPermalink }}" title="home" class="navbar-item">
                     <span class="logo"><h1>{{ .Site.Title }}</h1></span>
                 </a>
                 {{ range .Site.Menus.social }}

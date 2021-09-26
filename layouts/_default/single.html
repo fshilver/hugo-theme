@@ -10,38 +10,20 @@
         <div class="columns">
             <div class="column is-9">
                 <article>
-                    <h1 class="title is-1">{{ .Title }}</h1>
-                    <div class="title subtitle heading is-6 mt-5">
-                        <div class="columns is-vcentered">
-                            <div class="column">
-                                <div class="columns is-vcentered is-mobile">
-    
-                                    {{ with .Site.Params.avatar }}
-                                    <div class="column is-narrow">
-                                        <img src="{{ . }}" alt="avatar" class="author-image">
-                                    </div>
-                                    {{ end }}
-                                    <div class="column">
-                                        <p>{{ .Site.Params.author }}</p>
-                                        <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> | {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="column">
-                                {{ range $idx, $category := .Params.categories }}
-                                {{- if ne $idx 0 }}, {{ end }}<a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
-                                {{- end }}
-                            </div>
-                        </div>
-    
+
+                    <div class="content has-text-centered">
+                        <p class="is-size-5 has-text-weight-medium mb-2">{{ .Site.Params.author }}</p>
+                        <p class="mb-4 has-text-grey-light"><time>{{ .PublishDate.Format "January 2, 2006" }}</time></p>
                     </div>
+
+                    <h1 class="title is-size-3 has-text-centered">{{ .Title }}</h1>
                     {{ with .Params.images }}
                     <figure class="cover">
                         <img src="{{ index . 0 }}" alt="cover">
                     </figure>
                     {{ end }}
     
-                    <div class="content">
+                    <div class="content mt-6">
                         {{ .Content }}
                     </div>
                     <section class="section">
