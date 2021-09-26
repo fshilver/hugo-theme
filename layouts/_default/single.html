@@ -8,7 +8,8 @@
 <div class="container">
     <section class="section">
         <div class="columns">
-            <div class="column is-9">
+
+            <div class="column is-three-quarters">
                 <article>
 
                     <div class="content has-text-centered">
@@ -45,8 +46,18 @@
                 </article>
 
             </div>
-            <div class="column is-3">
+            <div class="column is-hidden-touch">
+                <div class="menu sticky">
+                {{ partial "widget-toc.html" .}}
                 {{ partial "widget-series.html" . }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="columns">
+            <div class="column is-three-quarters">
                 {{ partial "widget-tags.html" . }}
                 {{ partial "widget-related.html" . }}
                 {{ partial "widget-recent.html" . }}

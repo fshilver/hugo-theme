@@ -16,3 +16,6 @@ related_post:
 archive:
   one: Archive
   other: Archives
+
+toc:
+  other: Table of contents

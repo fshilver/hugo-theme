@@ -88,3 +88,18 @@ code {
     color: gray;
     font-family: 'Courier New', Courier, monospace;
 }
+
+/* 3 depth */
+#TableOfContents > ul > li > ul {
+    padding-left: 1rem;
+}
+
+/* 4 depth */
+#TableOfContents > ul > li > ul > li > ul{
+    padding-left: 2rem;
+}
+
+.sticky {
+    top: 52px; /* bulma has-navbar-fixed-top in body */
+    position: sticky;
+}
