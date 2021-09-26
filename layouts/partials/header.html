@@ -16,19 +16,38 @@
                     <span aria-hidden="true"></span>
                 </a>
             </div>
+
             <div class="navbar-menu" id="navMenu">
+
                 <div class="navbar-start">
                     {{ range .Site.Menus.nav }}
                         <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
                     {{ end }}
                 </div>
+
                 <div class="navbar-end">
+
+                    {{ if .IsTranslated }}
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Language</a>
+
+                        {{ range .Translations }}
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">{{ .Language }}</a>
+                        </div>
+                        {{ end }}
+                    </div>
+
+
+                    {{ end }}
+
                     {{ range .Site.Menus.social }}
                         <a class="navbar-item is-hidden-touch" href="{{ .URL }}" title="{{ .Name }}">
                             <span class="icon">{{ .Pre }}</span>
                         </a>
                     {{ end }}
                 </div>
+
             </div>
 
     </nav>
