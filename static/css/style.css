@@ -84,8 +84,8 @@ a.box:hover,
 }
 
 code {
-    background-color: white;
-    color: gray;
+    background-color: gray;
+    color: white;
     font-family: 'Courier New', Courier, monospace;
 }
 
